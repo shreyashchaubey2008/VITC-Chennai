@@ -1,0 +1,35 @@
+# Supermarket Billing System
+
+prices = {
+    "rice": 60,
+    "milk": 30,
+    "bread": 40,
+    "eggs": 6,
+    "sugar": 50,
+    "oil": 120,
+    "biscuit": 20
+}
+
+total = 0
+
+print("Available items:")
+for item in prices:
+    print(item, "-", prices[item])
+
+while True:
+    item = input("\nEnter item name (or 'done' to finish): ").lower()
+
+    if item == "done":
+        break
+
+    if item in prices:
+        quantity = int(input("Enter quantity: "))
+        cost = prices[item] * quantity
+        total += cost
+        print("Cost:", cost)
+    else:
+        print("Item not available.")
+
+print("\n------ BILL ------")
+print("Total Amount: ₹", total)
+print("------------------")  
